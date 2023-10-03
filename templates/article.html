@@ -1,0 +1,112 @@
+{% extends "blog codes.html" %}
+
+
+{% block body %}
+
+
+{% if article %}
+<b>
+<span style="color:#ff3030;">
+<h3>{{article.title}}</h3>
+</span>
+</b>
+<hr>
+<b>
+<span style="color:#800080;">
+Yazar :
+</span>
+</b>
+{{article.author}}
+<hr>
+<b>
+<span style="color:#800080;">
+Tarih:
+</span>
+</b>
+{{article.created_date}}
+<hr>
+{{article.content|safe}}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<div class="card">
+    
+               
+    <div class="row">
+        
+    
+        
+        <div class="col-10">
+            
+            
+            <div class="comment-box ml-2">
+                
+                <h4>Yorum Yaz</h4>
+                
+                <div class="rating"> 
+                    
+                    <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+                    <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> 
+                    <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                    <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+                    <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                </div>
+                
+                <div class="comment-area">
+                    
+                    <textarea class="form-control" placeholder="Düşüncelerin neler?" rows="5"></textarea>
+                
+                </div>
+                
+                <div class="comment-btns mt-2">
+                    
+                    <div class="row">
+                        
+                        <div class="col-1">
+                            
+                            <div class="pull-left">
+                            
+                            <button class="btn btn-success btn-sm">İptal</button>      
+                                
+                            </div>
+                        
+                        </div>
+                        
+                        <div class="col+1">
+                            
+                            <div class="pull-right">
+                            
+                            <button class="btn btn-success send btn-sm">Gönder <i class="fa fa-long-arrow-right ml-1"></i></button>      
+                                
+                            </div>
+                        
+                        </div>
+                    
+                    </div>
+                
+                </div>
+            
+            
+            </div>
+        
+        </div>
+    
+    
+    </div>
+
+</div>
+
+{% else %}
+
+<div class = "alert alert-warning">Böyle bir makale bulunmuyor...</div>
+{% endif %}
+
+
+
+{% endblock body %}
